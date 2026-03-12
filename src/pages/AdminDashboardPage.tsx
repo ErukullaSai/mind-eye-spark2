@@ -95,7 +95,7 @@ const AdminDashboardPage = () => {
                 {pieData.map((d) => (
                   <span key={d.name} className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full" style={{ backgroundColor: d.color }} />
-                    {d.name} ({d.value})
+                    {d.name} ({String(d.value)})
                   </span>
                 ))}
               </div>
