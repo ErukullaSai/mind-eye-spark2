@@ -203,6 +203,7 @@ const AssessmentPage = () => {
 
         const riskResult = calculateRiskScore(newData as AssessmentData);
         setResult(riskResult);
+        await saveAssessment(newData as AssessmentData, riskResult);
 
         toast({
           title: "Report processed successfully",
