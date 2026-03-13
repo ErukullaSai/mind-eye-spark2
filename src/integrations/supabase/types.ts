@@ -114,32 +114,50 @@ export type Database = {
       }
       profiles: {
         Row: {
+          address: string | null
+          bio: string | null
           created_at: string | null
+          date_of_birth: string | null
+          department: string | null
           email: string
+          experience_years: number | null
           full_name: string
           id: string
           license_number: string | null
           phone: string | null
+          qualification: string | null
           role: string
           specialization: string | null
         }
         Insert: {
+          address?: string | null
+          bio?: string | null
           created_at?: string | null
+          date_of_birth?: string | null
+          department?: string | null
           email: string
+          experience_years?: number | null
           full_name?: string
           id: string
           license_number?: string | null
           phone?: string | null
+          qualification?: string | null
           role?: string
           specialization?: string | null
         }
         Update: {
+          address?: string | null
+          bio?: string | null
           created_at?: string | null
+          date_of_birth?: string | null
+          department?: string | null
           email?: string
+          experience_years?: number | null
           full_name?: string
           id?: string
           license_number?: string | null
           phone?: string | null
+          qualification?: string | null
           role?: string
           specialization?: string | null
         }

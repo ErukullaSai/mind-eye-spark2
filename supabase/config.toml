@@ -8,3 +8,6 @@ verify_jwt = false
 
 [functions.create-doctor]
 verify_jwt = false
+
+[functions.update-doctor]
+verify_jwt = false
