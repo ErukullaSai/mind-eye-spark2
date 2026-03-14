@@ -244,10 +244,14 @@ const AssessmentPage = () => {
 
         const riskResult = calculateRiskScore(newData as AssessmentData);
         setResult(riskResult);
-        await saveAssessment(newData as AssessmentData, riskResult);
+        setMode("result");
+        setAiLoading(true);
+        const explanation = await generateAIExplanation(newData as AssessmentData, riskResult);
+        setAiExplanation(explanation);
+        setAiLoading(false);
+        await saveAssessment(newData as AssessmentData, riskResult, explanation);
 
         toast({ title: "Report processed successfully", description: "Clinical values extracted and risk score calculated." });
-        setMode("result");
       }
     } catch (err) {
       console.error("Upload error:", err);
