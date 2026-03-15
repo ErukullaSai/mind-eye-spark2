@@ -149,6 +149,9 @@ const AssessmentPage = () => {
   };
 
   const [aiExplanation, setAiExplanation] = useState<string[]>([]);
+  const [aiExplanationCategorized, setAiExplanationCategorized] = useState<CategorizedItem[]>([]);
+  const [clinicalStepsCategorized, setClinicalStepsCategorized] = useState<CategorizedItem[]>([]);
+  const [clinicalStepsFlat, setClinicalStepsFlat] = useState<string[]>([]);
   const [aiLoading, setAiLoading] = useState(false);
 
   const handleAnalyze = async () => {
@@ -156,10 +159,13 @@ const AssessmentPage = () => {
     setResult(r);
     setMode("result");
     setAiLoading(true);
-    const explanation = await generateAIExplanation(data, r);
-    setAiExplanation(explanation);
+    const aiResult = await generateAIExplanation(data, r);
+    setAiExplanation(aiResult.flat);
+    setAiExplanationCategorized(aiResult.categorized);
+    setClinicalStepsCategorized(aiResult.clinicalStepsCategorized);
+    setClinicalStepsFlat(aiResult.flatSteps);
     setAiLoading(false);
-    await saveAssessment(data, r, explanation);
+    await saveAssessment(data, r, aiResult.flat, aiResult.flatSteps);
   };
 
   const handleReset = () => {
