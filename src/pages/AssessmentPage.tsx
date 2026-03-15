@@ -265,10 +265,13 @@ const AssessmentPage = () => {
         setResult(riskResult);
         setMode("result");
         setAiLoading(true);
-        const explanation = await generateAIExplanation(newData as AssessmentData, riskResult);
-        setAiExplanation(explanation);
+        const aiResult = await generateAIExplanation(newData as AssessmentData, riskResult);
+        setAiExplanation(aiResult.flat);
+        setAiExplanationCategorized(aiResult.categorized);
+        setClinicalStepsCategorized(aiResult.clinicalStepsCategorized);
+        setClinicalStepsFlat(aiResult.flatSteps);
         setAiLoading(false);
-        await saveAssessment(newData as AssessmentData, riskResult, explanation);
+        await saveAssessment(newData as AssessmentData, riskResult, aiResult.flat, aiResult.flatSteps);
 
         toast({ title: "Report processed successfully", description: "Clinical values extracted and risk score calculated." });
       }
