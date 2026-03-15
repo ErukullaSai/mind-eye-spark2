@@ -94,7 +94,14 @@ const AssessmentPage = () => {
     loadPatient();
   }, [patientId, user]);
 
-  const generateAIExplanation = async (assessmentData: AssessmentData, riskResult: RiskResult): Promise<string[]> => {
+  type CategorizedItem = { category: string; points?: string[]; steps?: string[] };
+
+  const generateAIExplanation = async (assessmentData: AssessmentData, riskResult: RiskResult): Promise<{
+    flat: string[];
+    categorized: CategorizedItem[];
+    clinicalStepsCategorized: CategorizedItem[];
+    flatSteps: string[];
+  }> => {
     try {
       const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
       const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
@@ -108,11 +115,16 @@ const AssessmentPage = () => {
           factors: riskResult.factors,
         }),
       });
-      if (!response.ok) return [];
+      if (!response.ok) return { flat: [], categorized: [], clinicalStepsCategorized: [], flatSteps: [] };
       const data = await response.json();
-      return data.explanation || [];
+      return {
+        flat: data.explanation || [],
+        categorized: data.riskExplanation || [],
+        clinicalStepsCategorized: data.clinicalSteps || [],
+        flatSteps: data.flatSteps || [],
+      };
     } catch {
-      return [];
+      return { flat: [], categorized: [], clinicalStepsCategorized: [], flatSteps: [] };
     }
   };
 
