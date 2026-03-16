@@ -14,3 +14,6 @@ verify_jwt = false
 
 [functions.generate-risk-explanation]
 verify_jwt = false
+
+[functions.analyze-video]
+verify_jwt = false

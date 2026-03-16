@@ -1,4 +1,4 @@
-import { Eye, Activity, BarChart3, FileText, Shield, LogOut, User, Stethoscope } from "lucide-react";
+import { Eye, Activity, BarChart3, FileText, Shield, LogOut, User, Stethoscope, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation, Link } from "react-router-dom";
 import { forwardRef } from "react";
@@ -16,6 +16,7 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
         { label: "Doctors", icon: Stethoscope, path: "/admin/doctors" },
         { label: "Reports", icon: FileText, path: "/admin/reports" },
         { label: "AI Governance", icon: Shield, path: "/admin/governance" },
+        { label: "Video Analyzer", icon: Video, path: "/admin/video-analyzer" },
       ]
     : [
         { label: "My Patients", icon: BarChart3, path: "/doctor/dashboard" },

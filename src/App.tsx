@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
 import AdminDoctorsPage from "./pages/AdminDoctorsPage";
 import AdminReportsPage from "./pages/AdminReportsPage";
+import AdminVideoAnalyzerPage from "./pages/AdminVideoAnalyzerPage";
 import DoctorDashboardPage from "./pages/DoctorDashboardPage";
 import DoctorReportsPage from "./pages/DoctorReportsPage";
 import DoctorProfilePage from "./pages/DoctorProfilePage";
@@ -43,6 +44,7 @@ const AppRoutes = () => {
       <Route path="/admin/doctors" element={<ProtectedRoute allowedRole="admin"><AdminDoctorsPage /></ProtectedRoute>} />
       <Route path="/admin/reports" element={<ProtectedRoute allowedRole="admin"><AdminReportsPage /></ProtectedRoute>} />
       <Route path="/admin/governance" element={<ProtectedRoute allowedRole="admin"><GovernancePage /></ProtectedRoute>} />
+      <Route path="/admin/video-analyzer" element={<ProtectedRoute allowedRole="admin"><AdminVideoAnalyzerPage /></ProtectedRoute>} />
 
       {/* Doctor routes */}
       <Route path="/doctor/dashboard" element={<ProtectedRoute allowedRole="doctor"><DoctorDashboardPage /></ProtectedRoute>} />
