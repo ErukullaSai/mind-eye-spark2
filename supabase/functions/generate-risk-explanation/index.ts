@@ -31,7 +31,7 @@ serve(async (req) => {
    - Medication Adjustments (if applicable)
    - Patient Education (counseling points)
 
-Provide 8-15 bullet points for the risk explanation (across all categories) and 6-12 bullet points for clinical steps (across all categories). Each bullet should be a clear, concise clinical statement. For clinical steps, use actionable language (e.g., "Monitor IOP every 2 hours for 24 hours", "Schedule follow-up within 48 hours").`;
+Provide 15-25 detailed bullet points for the risk explanation (across all categories, at least 2-4 per category) and 12-20 bullet points for clinical steps (across all categories, at least 2-3 per category). Each bullet should be a detailed, multi-sentence clinical statement explaining the reasoning. For clinical steps, use actionable and specific language with timelines and parameters (e.g., "Monitor IOP every 2 hours for 24 hours post-surgery to detect pressure spikes early", "Schedule comprehensive follow-up examination within 48 hours including slit-lamp biomicroscopy and fundoscopy").`;
 
     const userPrompt = `Patient Assessment Data:
 ${JSON.stringify(assessmentData, null, 2)}
