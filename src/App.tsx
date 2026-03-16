@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
 import AdminDoctorsPage from "./pages/AdminDoctorsPage";
 import AdminReportsPage from "./pages/AdminReportsPage";
+import AdminVideoAnalyzerPage from "./pages/AdminVideoAnalyzerPage";
 import DoctorDashboardPage from "./pages/DoctorDashboardPage";
 import DoctorReportsPage from "./pages/DoctorReportsPage";
 import DoctorProfilePage from "./pages/DoctorProfilePage";
