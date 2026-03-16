@@ -247,7 +247,7 @@ const AdminReportsPage = () => {
                           <Badge variant={riskBadgeVariant(a.risk_level)}>{a.risk_level} Risk — {a.risk_score}%</Badge>
                         </div>
                         <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                          <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(a.created_at).toLocaleDateString()}</span>
+                          <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(a.created_at).toLocaleDateString()} at {new Date(a.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                           {a.surgery_type && <span>· Surgery: <strong>{a.surgery_type}</strong></span>}
                           <span>· {a.status}</span>
                           <span className="flex items-center gap-1">· <Stethoscope className="h-3 w-3" /> Dr. {(doctors[a.doctor_id] as any)?.full_name || "Unknown"}</span>
