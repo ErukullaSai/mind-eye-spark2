@@ -16,6 +16,7 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
         { label: "Doctors", icon: Stethoscope, path: "/admin/doctors" },
         { label: "Reports", icon: FileText, path: "/admin/reports" },
         { label: "AI Governance", icon: Shield, path: "/admin/governance" },
+        { label: "Video Analyzer", icon: Video, path: "/admin/video-analyzer" },
       ]
     : [
         { label: "My Patients", icon: BarChart3, path: "/doctor/dashboard" },
