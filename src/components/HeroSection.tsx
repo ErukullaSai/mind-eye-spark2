@@ -25,8 +25,8 @@ const HeroSection = () => {
         </div>
 
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-foreground md:text-6xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
-          Post-Surgery Eye Complication{" "}
-          <span className="text-primary">Risk Intelligence</span> Platform
+          AI-Based Eye Clinical{" "}
+          <span className="text-primary">Intelligence</span> Platform
         </h1>
 
         <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: "0.2s" }}>
